@@ -3,7 +3,7 @@
 \documentclass{beamer}
 
 \usepackage{tikz}
-\usepackage{enumitem}
+%\usepackage{enumitem}
 \usepackage{tcolorbox}
 
 \setbeamertemplate{navigation symbols}{}
@@ -26,26 +26,53 @@
 \setbeamertemplate{navigation symbols}{\insertframenumber}
 
 \begin{frame}{What was done?}
-\begin{columns}
-    \begin{column}{0.5\paperwidth}
+    \begin{minipage}{0.5\paperwidth}
         \begin{itemize}
             \item \textbf{Ising model}
+                \noindent \ising
             \item \textbf{Metropolis algorithm:}\\
                 Efficient sampling
+                \begin{equation*}
+                    p_a = e^{-\frac{\Delta E}{k_B T}}
+                \end{equation*}
         \end{itemize}
-    \end{column} \pause
+    \end{minipage} \pause
     \hfill
-    \begin{column}{0.3\paperwidth}
-        \begin{itemize}[itemsep=5mm]
-            \item[] Single core CPU \pause
-            \item[] Single GPU \pause
-            \item[] Multpiple GPUs \pause
+    \begin{minipage}[c]{0.3\paperwidth}
+        \begin{itemize}%[itemsep=5mm]
+            \item Single core CPU \pause
+            \item Single GPU \pause
+            \item Multpiple GPUs \pause
         \end{itemize}
-    \end{column}
-\end{columns}
+    \end{minipage}
 \begin{mybox}
     How does it scale? Is it worth the effort?
 \end{mybox}
+\end{frame}
+
+\begin{frame}{Ising model I}
+\begin{itemize}
+    \item A standard model of statistical physics \pause
+    \item classical model \pause
+    \item Formula:
+        \ising \pause
+    \item Describes magnets:\\
+        \begin{minipage}{0.3\paperwidth}\input{images/spin_lattice.tex}\end{minipage}
+        \hfill
+        \begin{minipage}{0.3\paperwidth}\includegraphics[keepaspectratio=true, width=0.3\paperwidth]{images/magnet.jpg}\end{minipage} \pause
+    \item System sizes: $100'000 \times 100'000$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ising model II}
+    Nearest neighbour interactions only!
+    \ising \pause
+    \vspace{1cm}
+    \begin{minipage}{0.3\paperwidth}\input{images/spin_lattice_all_interactions.tex}\end{minipage}
+    {\Huge$\Rightarrow$}
+    \begin{minipage}{0.2\paperwidth}\input{images/spin_lattice_nn.tex}\end{minipage} \pause
+    
+    Calculation of energy: $\mathcal{O}\left( n^2 \right) \Rightarrow \mathcal{O}\left( n \right)$
 \end{frame}
 
 \end{document}
