@@ -1,0 +1,23 @@
+%\newcommand{\UP}{1}
+%\newcommand{\RIGHT}{2}
+%\newcommand{\DOWN}{3}
+%\newcommand{\LEFT}{4}
+
+% (x, y) denotes the top left position of the arrow
+% length, x, y, orientation
+%\newcommand{\spin}[4][0.5]{
+%    \ifthenelse{#4 = \UP}{
+%        \draw[->] (#2, #3) -- (#2, #3 + #1);
+%    }{}
+%    \ifthenelse{#4 = \RIGHT}{
+%        \draw[->] (#2, #3) -- (#2 + #1, #3);
+%    }{}
+%    
+%    \ifthenelse{#4 = \DOWN}{
+%        \draw[->] (#2, #3) -- (#2, #3);
+%    }{}
+%}
+\newcommand{\up}[0]{$\uparrow$}
+\newcommand{\down}[0]{$\downarrow$}
+
+\newenvironment{mybox}{\begin{tcolorbox}[sharp corners=all, frame empty]}{\end{tcolorbox}}

@@ -1,0 +1,51 @@
+% Renato Bellotti, October 2018
+
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+
+\setbeamertemplate{navigation symbols}{}
+
+\input{images/helpers.tex}
+
+\begin{document}
+
+\begin{frame}{Multi-GPU accelerated multi-spin Monte Carlo simulations of the 2D Ising model}
+\begin{tabular}{c c c}
+    \input{images/spin_lattice.tex}
+    \textbf{\huge{+}} &
+    \includegraphics[keepaspectratio=true, width=0.2\paperwidth]{images/multi_gpu.png}
+    \textbf{\huge{=}} &
+    \includegraphics[keepaspectratio=true, width=0.2\paperwidth]{images/cheetah.jpg}
+\end{tabular}
+\end{frame}
+
+\setcounter{framenumber}{0}
+\setbeamertemplate{navigation symbols}{\insertframenumber}
+
+\begin{frame}{What was done?}
+\begin{columns}
+    \begin{column}{0.5\paperwidth}
+        \begin{itemize}
+            \item \textbf{Ising model}
+            \item \textbf{Metropolis algorithm:}\\
+                Efficient sampling
+        \end{itemize}
+    \end{column} \pause
+    \hfill
+    \begin{column}{0.3\paperwidth}
+        \begin{itemize}[itemsep=5mm]
+            \item[] Single core CPU \pause
+            \item[] Single GPU \pause
+            \item[] Multpiple GPUs \pause
+        \end{itemize}
+    \end{column}
+\end{columns}
+\begin{mybox}
+    How does it scale? Is it worth the effort?
+\end{mybox}
+\end{frame}
+
+\end{document}
