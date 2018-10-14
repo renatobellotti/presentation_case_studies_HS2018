@@ -5,6 +5,7 @@
 \usepackage{tikz}
 %\usepackage{enumitem}
 \usepackage{tcolorbox}
+\usepackage{amsmath}
 
 \setbeamertemplate{navigation symbols}{}
 
@@ -33,7 +34,7 @@
             \item \textbf{Metropolis algorithm:}\\
                 Efficient sampling
                 \begin{equation*}
-                    p_a = e^{-\frac{\Delta E}{k_B T}}
+                    p_a = e^{-\frac{E}{k_B T}}
                 \end{equation*}
         \end{itemize}
     \end{minipage} \pause
@@ -73,6 +74,30 @@
     \begin{minipage}{0.2\paperwidth}\input{images/spin_lattice_nn.tex}\end{minipage} \pause
     
     Calculation of energy: $\mathcal{O}\left( n^2 \right) \Rightarrow \mathcal{O}\left( n \right)$
+\end{frame}
+
+\begin{frame}{Metropolis algorithm}
+\begin{itemize}
+    \item \textbf{Goal:} Sample phase space\\
+        \vspace{3mm}
+        \begin{minipage}[c]{0.4\textwidth}
+            \input{images/spin_lattice.tex}
+        \end{minipage}
+        \begin{minipage}[c]{0.2\textwidth} {\Huge $\stackrel{!}{\sim}$} \end{minipage}
+        \begin{minipage}[c]{0.3\textwidth} {\Huge $e^{-\frac{E}{k_B T}}$} \end{minipage} \pause
+    \item \textbf{Algorithm:}\\ \pause
+            1.) Propose new state: Random spin flips!\\
+            \vspace{2mm}
+            \begin{minipage}{0.3\textwidth}
+                \input{images/flip_before.tex}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[c]{0.2\textwidth} {\Huge $\Rightarrow$} \end{minipage}
+            \begin{minipage}[c]{0.3\textwidth}
+                \input{images/flip_after.tex}
+            \end{minipage}\\ \pause
+            2.) Accept the new configuration: $p_a = e^{-\frac{\Delta E}{k_B T}}$
+\end{itemize}
 \end{frame}
 
 \end{document}

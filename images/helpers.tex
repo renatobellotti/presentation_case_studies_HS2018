@@ -32,4 +32,10 @@
     \end{equation*}
 }
 
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\newcommand*\rcircled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt, color=red] (char) {#1};}}
+
 \newenvironment{mybox}{\begin{tcolorbox}[sharp corners=all, frame empty]}{\end{tcolorbox}}
