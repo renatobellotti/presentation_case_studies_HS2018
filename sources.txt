@@ -2,3 +2,4 @@ cheetah.jpg         https://i2.wp.com/rangerrick.org/wp-content/uploads/2018/04/
 tesla_c1060.jpg     https://www.nvidia.de/object/tesla_c1060_de.html
 gpu.jpg             https://www.bhphotovideo.com/images/images2500x2500/nvidia_900_22081_0040_000_tesla_k40_gpu_accelerator_1046358.jpg
 magnet.jpg          https://5.imimg.com/data5/DW/KT/MY-13298440/horseshoe-magnet-500x500.jpg
+intel_xeon.jpg      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDA1hcuSRjmErGHzjl5-CZlufUhPJXVZnX6R5955AEyMsJmBUUrbhkaswn

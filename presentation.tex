@@ -27,40 +27,45 @@
 \setbeamertemplate{navigation symbols}{\insertframenumber}
 
 \begin{frame}{What was done?}
-    \begin{minipage}{0.5\paperwidth}
-        \begin{itemize}
-            \item \textbf{Ising model}
-                \noindent \ising
-            \item \textbf{Metropolis algorithm:}\\
-                Efficient sampling
-                \begin{equation*}
-                    p_a = e^{-\frac{E}{k_B T}}
-                \end{equation*}
-        \end{itemize}
+    \begin{itemize}
+        \item \textbf{Ising model}
+            \noindent \ising
+        \item \textbf{Metropolis algorithm:}\\
+            Efficient sampling
+            \begin{equation*}
+                p_a = e^{-\frac{E}{k_B T}}
+            \end{equation*}
+    \end{itemize} \pause
+    \vspace{5mm}
+    \begin{minipage}{0.2\paperwidth}
+        Single core CPU\\
+        \includegraphics[keepaspectratio=true, height=2cm]{images/intel_xeon.jpg}
     \end{minipage} \pause
     \hfill
-    \begin{minipage}[c]{0.3\paperwidth}
-        \begin{itemize}%[itemsep=5mm]
-            \item Single core CPU \pause
-            \item Single GPU \pause
-            \item Multpiple GPUs \pause
-        \end{itemize}
-    \end{minipage}
-\begin{mybox}
+    \begin{minipage}{0.2\paperwidth}
+        Single GPU\\
+        \includegraphics[keepaspectratio=true, height=2cm]{images/gpu_modified.png}
+    \end{minipage} \pause
+    \hfill
+    \begin{minipage}{0.3\paperwidth}
+        Mutliple GPUs\\
+        \includegraphics[keepaspectratio=true, height=2cm]{images/multi_gpu.png}
+    \end{minipage} \pause
+\noindent\begin{mybox}
     How does it scale? Is it worth the effort?
 \end{mybox}
 \end{frame}
 
 \begin{frame}{Ising model I}
 \begin{itemize}
-    \item A standard model of statistical physics \pause
-    \item classical model \pause
     \item Formula:
         \ising \pause
+    \item A standard model of statistical physics \pause
+    \item classical model \pause
     \item Describes magnets:\\
         \begin{minipage}{0.3\paperwidth}\input{images/spin_lattice.tex}\end{minipage}
-        \hfill
-        \begin{minipage}{0.3\paperwidth}\includegraphics[keepaspectratio=true, width=0.3\paperwidth]{images/magnet.jpg}\end{minipage} \pause
+        \begin{minipage}[c]{0.2\paperwidth} $\mathrel{\widehat{=}}$ \end{minipage}
+        \begin{minipage}{0.2\paperwidth}\includegraphics[keepaspectratio=true, width=0.3\paperwidth]{images/magnet.jpg}\end{minipage} \pause
     \item System sizes: $100'000 \times 100'000$
 \end{itemize}
 \end{frame}
@@ -85,6 +90,7 @@
         \end{minipage}
         \begin{minipage}[c]{0.2\textwidth} {\Huge $\stackrel{!}{\sim}$} \end{minipage}
         \begin{minipage}[c]{0.3\textwidth} {\Huge $e^{-\frac{E}{k_B T}}$} \end{minipage} \pause
+    \vspace{2mm}
     \item \textbf{Algorithm:}\\ \pause
             1.) Propose new state: Random spin flips!\\
             \vspace{2mm}
