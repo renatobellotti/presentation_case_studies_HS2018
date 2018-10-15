@@ -2,9 +2,10 @@
 
 \documentclass{beamer}
 
+%\usetheme{metropolis}
+
+\usepackage{xcolor}
 \usepackage{tikz}
-%\usepackage{enumitem}
-\usepackage{tcolorbox}
 \usepackage{amsmath}
 
 \setbeamertemplate{navigation symbols}{}
@@ -51,9 +52,9 @@
         Mutliple GPUs\\
         \includegraphics[keepaspectratio=true, height=2cm]{images/multi_gpu.png}
     \end{minipage} \pause
-\noindent\begin{mybox}
+\begin{exampleblock}{}
     How does it scale? Is it worth the effort?
-\end{mybox}
+\end{exampleblock}
 \end{frame}
 
 \begin{frame}{Ising model I}
@@ -112,6 +113,22 @@
     \item Group spins in groups of size 32 (int)
     \item 100'000 $\times$ 100'000 lattice: $\approx$~1.2~GB
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Single core CPU: Algorithm II}
+\includegraphics[keepaspectratio=true, width=\textwidth]{images/single_core2.png}\\ \pause
+\begin{minipage}{0.5\textwidth}
+    \includegraphics[keepaspectratio=true, width=\textwidth]{images/single_core3.png}\\ \pause
+    \includegraphics[keepaspectratio=true, width=\textwidth]{images/single_core4.png} \pause
+\end{minipage}
+\hfill\vline\hfill \pause
+\begin{minipage}{0.4\textwidth}
+    Combine with acceptance probability\\
+    $\Rightarrow$ Accept if
+    \begin{equation*}
+        i_1 + i_2 + i_3 + i_4 + 2 \text{exp}_8 + \text{exp}_4 \geq 2
+    \end{equation*}
+\end{minipage}
 \end{frame}
 
 \end{document}
