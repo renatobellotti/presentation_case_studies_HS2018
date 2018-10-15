@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage[dvipsnames]{xcolor}
 \usepackage{tikz}
 
 \begin{document}
@@ -14,74 +15,80 @@
 \newlength{\boxmarginthickness}
 \setlength{\boxmarginthickness}{0.5mm}
 
+\definecolor{s0col}{RGB}{255, 0, 0}
+\definecolor{s1col}{RGB}{0, 255, 0}
+\definecolor{s2col}{RGB}{230, 234, 4}
+\definecolor{s3col}{RGB}{0, 0, 255}
+\definecolor{s4col}{RGB}{0, 0, 0}
+
 \begin{tikzpicture}
     % grid
     \draw[step=\gridlen, line width=0.1mm] (-0.9\gridlen, -0.9\gridlen) grid (12.9\gridlen, 4.9\gridlen);
     % s0
-    \draw[draw=red, line width=\boxmarginthickness] (2\gridlen, 2\gridlen) rectangle ++(\slen, \gridlen);
-    \filldraw[fill=red, opacity=0.2] (2\gridlen, 2\gridlen) rectangle ++(\gridlen, \gridlen);
+    \draw[draw=s0col, line width=\boxmarginthickness] (2\gridlen, 2\gridlen) rectangle ++(\slen, \gridlen);
+    \filldraw[fill=s0col, opacity=0.2] (2\gridlen, 2\gridlen) rectangle ++(\gridlen, \gridlen);
     % s1
-    \draw[draw=green, line width=\boxmarginthickness] (2\gridlen, 3\gridlen+\boxmarginthickness) rectangle ++(\slen, \gridlen-\boxmarginthickness);
-    \filldraw[fill=green, opacity=0.2] (2\gridlen, 3\gridlen+\boxmarginthickness) rectangle ++(\gridlen, \gridlen-\boxmarginthickness);
+    \draw[draw=s1col, line width=\boxmarginthickness] (2\gridlen, 3\gridlen+\boxmarginthickness) rectangle ++(\slen, \gridlen-\boxmarginthickness);
+    \filldraw[fill=s1col, opacity=0.2] (2\gridlen, 3\gridlen+\boxmarginthickness) rectangle ++(\gridlen, \gridlen-\boxmarginthickness);
     % s2
-    \draw[draw=yellow, line width=\boxmarginthickness] (1\gridlen, 2\gridlen+\boxmarginthickness) rectangle ++(\slen, \gridlen-2\boxmarginthickness);
-    \filldraw[fill=yellow, opacity=0.2] (1\gridlen, 2\gridlen+\boxmarginthickness) rectangle ++(\gridlen, \gridlen-2\boxmarginthickness);
+    \draw[draw=s2col, line width=\boxmarginthickness] (1\gridlen, 2\gridlen+\boxmarginthickness) rectangle ++(\slen, \gridlen-2\boxmarginthickness);
+    \filldraw[fill=s2col, opacity=0.2] (1\gridlen, 2\gridlen+\boxmarginthickness) rectangle ++(\gridlen, \gridlen-2\boxmarginthickness);
     % s3
-    \draw[draw=blue, line width=\boxmarginthickness] (2\gridlen, 1\gridlen) rectangle ++(\slen, \gridlen-\boxmarginthickness);
-    \filldraw[fill=blue, opacity=0.2] (2\gridlen, 1\gridlen) rectangle ++(\gridlen, \gridlen-\boxmarginthickness);
+    \draw[draw=s3col, line width=\boxmarginthickness] (2\gridlen, 1\gridlen) rectangle ++(\slen, \gridlen-\boxmarginthickness);
+    \filldraw[fill=s3col, opacity=0.2] (2\gridlen, 1\gridlen) rectangle ++(\gridlen, \gridlen-\boxmarginthickness);
     % s4
-    \draw[draw=black, line width=\boxmarginthickness] (3\gridlen+\boxmarginthickness, 2\gridlen+2\boxmarginthickness) rectangle ++(\slen-\boxmarginthickness, \gridlen-4\boxmarginthickness);
-    \filldraw[fill=black, opacity=0.2] (3\gridlen+\boxmarginthickness, 2\gridlen+2\boxmarginthickness) rectangle ++(\gridlen-\boxmarginthickness, \gridlen-4\boxmarginthickness);
+    \draw[draw=s4col, line width=\boxmarginthickness] (3\gridlen+\boxmarginthickness, 2\gridlen+2\boxmarginthickness) rectangle ++(\slen-\boxmarginthickness, \gridlen-4\boxmarginthickness);
+    \filldraw[fill=s4col, opacity=0.2] (3\gridlen+\boxmarginthickness, 2\gridlen+2\boxmarginthickness) rectangle ++(\gridlen-\boxmarginthickness, \gridlen-4\boxmarginthickness);
     
     % legend s0
-    \draw[draw=red, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
-    \node[] at (14.7\gridlen, 4.5\gridlen){\textcolor{red}{$s_0$}};
+    \draw[draw=s0col, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \node[] at (14.7\gridlen, 4.5\gridlen){\textcolor{s0col}{$s_0$}};
     % legend s1
-    \draw[draw=green, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen-\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
-    \node[] at (14.7\gridlen, 4.5\gridlen-\gridlen){\textcolor{green}{$s_1$}};
+    \draw[draw=s1col, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen-\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \node[] at (14.7\gridlen, 4.5\gridlen-\gridlen){\textcolor{s1col}{$s_1$}};
     % legend s2
-    \draw[draw=yellow, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen-2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
-    \node[] at (14.7\gridlen, 4.5\gridlen-2\gridlen){\textcolor{yellow}{$s_2$}};
+    \draw[draw=s2col, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen-2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \node[] at (14.7\gridlen, 4.5\gridlen-2\gridlen){\textcolor{s2col}{$s_2$}};
     % legend s3
-    \draw[draw=blue, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen-3\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
-    \node[] at (14.7\gridlen, 4.5\gridlen-3\gridlen){\textcolor{blue}{$s_3$}};
+    \draw[draw=s3col, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen-3\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \node[] at (14.7\gridlen, 4.5\gridlen-3\gridlen){\textcolor{s3col}{$s_3$}};
     % legend s4
-    \draw[draw=black, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen-4\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
-    \node[] at (14.7\gridlen, 4.5\gridlen-4\gridlen){\textcolor{black}{$s_4$}};
+    \draw[draw=s4col, line width=\boxmarginthickness] (13.3\gridlen, 4.3\gridlen-4\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \node[] at (14.7\gridlen, 4.5\gridlen-4\gridlen){\textcolor{s4col}{$s_4$}};
     
     % spin opposed?
-    \filldraw[draw=red, line width=\boxmarginthickness, fill=red, fill opacity=0.2] (0\gridlen, -2.5\gridlen) rectangle ++(0.5\gridlen, 0.5\gridlen);
+    \filldraw[draw=s0col, line width=\boxmarginthickness, fill=s0col, fill opacity=0.2] (0\gridlen, -2.5\gridlen) rectangle ++(0.5\gridlen, 0.5\gridlen);
     \node[] at (\gridlen, -2.25\gridlen){\huge $\neq$};
-    \filldraw[draw=green, line width=\boxmarginthickness, fill=green, fill opacity=0.2] (1.5\gridlen, -2.5\gridlen) rectangle ++(0.5\gridlen, 0.5\gridlen);
+    \filldraw[draw=s1col, line width=\boxmarginthickness, fill=s1col, fill opacity=0.2] (1.5\gridlen, -2.5\gridlen) rectangle ++(0.5\gridlen, 0.5\gridlen);
     \node[] at (3\gridlen, -2.3\gridlen){\huge $\Leftrightarrow$};
-    \filldraw[draw=red, line width=\boxmarginthickness, fill=red, fill opacity=0.2] (4\gridlen, -2.5\gridlen) rectangle ++(0.5\gridlen, 0.5\gridlen);
+    \filldraw[draw=s0col, line width=\boxmarginthickness, fill=s0col, fill opacity=0.2] (4\gridlen, -2.5\gridlen) rectangle ++(0.5\gridlen, 0.5\gridlen);
     \node[] at (5.5\gridlen, -2.25\gridlen){\huge XOR};
-    \filldraw[draw=green, line width=\boxmarginthickness, fill=green, fill opacity=0.2] (6.5\gridlen, -2.5\gridlen) rectangle ++(0.5\gridlen, 0.5\gridlen);
+    \filldraw[draw=s1col, line width=\boxmarginthickness, fill=s1col, fill opacity=0.2] (6.5\gridlen, -2.5\gridlen) rectangle ++(0.5\gridlen, 0.5\gridlen);
     
     %\node[] at (0\gridlen, -4\gridlen){\huge Entire group (32~bit)};
-    \node[] at (0\gridlen, -4\gridlen){\Huge \textcolor{green}{$i_1$}};
+    \node[] at (0\gridlen, -4\gridlen){\Huge \textcolor{s1col}{$i_1$}};
     \node[] at (1\gridlen, -4\gridlen){\Huge $=$};
-    \draw[draw=red, line width=\boxmarginthickness] (2\gridlen, -4.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \draw[draw=s0col, line width=\boxmarginthickness] (2\gridlen, -4.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
     \node[] at (4.5\gridlen, -4\gridlen){\Huge XOR};
-    \draw[draw=green, line width=\boxmarginthickness] (6\gridlen, -4.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \draw[draw=s1col, line width=\boxmarginthickness] (6\gridlen, -4.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
     
-    \node[] at (0\gridlen, -5\gridlen){\Huge \textcolor{yellow}{$i_2$}};
+    \node[] at (0\gridlen, -5\gridlen){\Huge \textcolor{s2col}{$i_2$}};
     \node[] at (1\gridlen, -5\gridlen){\Huge $=$};
-    \draw[draw=red, line width=\boxmarginthickness] (2\gridlen, -5.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \draw[draw=s0col, line width=\boxmarginthickness] (2\gridlen, -5.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
     \node[] at (4.5\gridlen, -5\gridlen){\Huge XOR};
-    \draw[draw=yellow, line width=\boxmarginthickness] (6\gridlen, -5.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \draw[draw=s2col, line width=\boxmarginthickness] (6\gridlen, -5.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
     
-    \node[] at (0\gridlen, -6\gridlen){\Huge \textcolor{blue}{$i_3$}};
+    \node[] at (0\gridlen, -6\gridlen){\Huge \textcolor{s3col}{$i_3$}};
     \node[] at (1\gridlen, -6\gridlen){\Huge $=$};
-    \draw[draw=red, line width=\boxmarginthickness] (2\gridlen, -6.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \draw[draw=s0col, line width=\boxmarginthickness] (2\gridlen, -6.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
     \node[] at (4.5\gridlen, -6\gridlen){\Huge XOR};
-    \draw[draw=blue, line width=\boxmarginthickness] (6\gridlen, -6.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \draw[draw=s3col, line width=\boxmarginthickness] (6\gridlen, -6.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
     
-    \node[] at (0\gridlen, -7\gridlen){\Huge \textcolor{black}{$i_4$}};
+    \node[] at (0\gridlen, -7\gridlen){\Huge \textcolor{s4col}{$i_4$}};
     \node[] at (1\gridlen, -7\gridlen){\Huge $=$};
-    \draw[draw=red, line width=\boxmarginthickness] (2\gridlen, -7.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \draw[draw=s0col, line width=\boxmarginthickness] (2\gridlen, -7.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
     \node[] at (4.5\gridlen, -7\gridlen){\Huge XOR};
-    \draw[draw=black, line width=\boxmarginthickness] (6\gridlen, -7.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
+    \draw[draw=s4col, line width=\boxmarginthickness] (6\gridlen, -7.2\gridlen) rectangle ++ (\gridlen, 0.5\gridlen);
 \end{tikzpicture}
 
 \end{document}
