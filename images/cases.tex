@@ -1,0 +1,74 @@
+\documentclass{article}
+
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{bigdelim}
+
+\input{helpers.tex}
+
+\definecolor{oppcol}{RGB}{0, 0, 255}
+
+\newcommand{\tablehead}[1]{\textbf{#1}}
+\newcommand{\oppcnt}[1]{\textcolor{oppcol}{#1}}
+
+\newcommand{\oup}[0]{\textcolor{oppcol}{\up}}
+\newcommand{\odown}[0]{\textcolor{oppcol}{\down}}
+
+\newcommand{\oppzero}[0]{
+    \Huge\begin{tabular}{c c c}
+        & \up & \\
+    \up & \rup & \up \\
+        & \up & \\
+    \end{tabular}
+}
+
+\newcommand{\oppone}[0]{
+    \Huge\begin{tabular}{c c c}
+        & \odown & \\
+    \up & \rup & \up \\
+        & \up & \\
+    \end{tabular}
+}
+
+\newcommand{\opptwo}[0]{
+    \Huge\begin{tabular}{c c c}
+        & \odown & \\
+    \up & \rup & \odown \\
+        & \up & \\
+    \end{tabular}
+}
+
+\newcommand{\oppthree}[0]{
+    \Huge\begin{tabular}{c c c}
+        & \odown & \\
+    \odown & \rup & \odown \\
+        & \up & \\
+    \end{tabular}
+}
+
+\newcommand{\oppfour}[0]{
+    \Huge\begin{tabular}{c c c}
+        & \odown & \\
+    \odown & \rup & \odown \\
+        & \odown & \\
+    \end{tabular}
+}
+
+
+\begin{document}
+\begin{tabular}{c c c}
+\tablehead{Type:} & \tablehead{\# opposed} & \tablehead{$\Delta E$ caused by flip of \rup}\\
+\toprule
+\oppzero & \oppcnt{0} & $+8J$ \tabularnewline
+\midrule
+\oppone & \oppcnt{1} & $+4J$ \tabularnewline
+\midrule
+\opptwo & \oppcnt{2} & $0$ \tabularnewline
+\midrule
+\oppthree & \oppcnt{3} & $-4J$ \tabularnewline
+\midrule
+\oppfour & \oppcnt{4} & $-8J$ \tabularnewline
+\bottomrule
+\end{tabular}
+\end{document}
