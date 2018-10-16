@@ -107,10 +107,11 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Single core CPU implementation}
+\begin{frame}{Single core CPU: Data structure}
 \begin{itemize}
     \item Multi-spin coding: 1~spin $\mathrel{\widehat{=}}$ 1~bit \pause
-    \item Group spins in groups of size 32 (int)
+    \item Group spins in groups of size 32 (int)\\
+        \includegraphics[keepaspectratio=true, width=0.7\textwidth]{images/grouped_spins_modified.png} \pause
     \item 100'000 $\times$ 100'000 lattice: $\approx$~1.2~GB
 \end{itemize}
 \end{frame}

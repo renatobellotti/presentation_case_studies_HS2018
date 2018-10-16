@@ -1,0 +1,24 @@
+\documentclass{article}
+
+\usepackage[table]{xcolor}
+\usepackage{tcolorbox}
+
+\input{helpers.tex}
+
+\newcommand{\latticebg}[0]{gray}
+
+\newcommand{\spinlattice}[0]{
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.2}
+
+    {\Huge \textbf{\begin{tabular}[b]{c c c c c c}
+        \up & \up & \down & \up & \down  & \up\\
+        \down & \down & \up & \down & \up & \down \\
+        \up & \up & \down & \down & \up & \down
+    \end{tabular}}
+    }
+}
+
+\begin{document}
+    \spinlattice
+\end{document}
