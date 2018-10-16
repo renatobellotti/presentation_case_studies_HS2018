@@ -6,7 +6,9 @@
 
 \usepackage{xcolor}
 \usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
 \usepackage{amsmath}
+\usepackage{booktabs}
 
 \setbeamertemplate{navigation symbols}{}
 
@@ -116,13 +118,32 @@
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Single core CPU: Algorithm I}
+    \begin{minipage}{0.5\textwidth}
+        \includegraphics[keepaspectratio=true, scale=0.6]{images/cases.pdf}\\
+    \end{minipage} \pause
+    \hfill
+    \begin{minipage}{0.4\textwidth}
+        \begin{equation*}
+            p_a = e^{-\frac{\Delta E}{k_B T}}
+        \end{equation*} \pause
+        \begin{exampleblock}{}
+            Count \#opposed spins!
+        \end{exampleblock}
+    \end{minipage}
+    %\begin{tikzpicture}
+    %    \draw [decorate,decoration={brace,amplitude=10pt},xshift=+4pt,yshift=20pt] (0.5,12.5) -- (0.5,7.0) node [black,midway,xshift=+0.7cm] {\footnotesize $P_1$};
+    %\end{tikzpicture}
+\end{frame}
+
 \begin{frame}{Single core CPU: Algorithm II}
 \includegraphics[keepaspectratio=true, width=\textwidth]{images/single_core2.png}\\ \pause
 \begin{minipage}{0.5\textwidth}
     \includegraphics[keepaspectratio=true, width=\textwidth]{images/single_core3.png}\\ \pause
     \includegraphics[keepaspectratio=true, width=\textwidth]{images/single_core4.png} \pause
 \end{minipage}
-\hfill\vline\hfill \pause
+\hfill\vline\hfill
+%\hfill
 \begin{minipage}{0.4\textwidth}
     Combine with acceptance probability:
     \begin{equation*}
