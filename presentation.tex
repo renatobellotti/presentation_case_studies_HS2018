@@ -19,13 +19,21 @@
 \begin{document}
 
 \begin{frame}{Multi-GPU accelerated multi-spin Monte Carlo simulations of the 2D Ising model}
-\begin{tabular}{c c c}
+\begin{minipage}{0.35\textwidth}
     \input{images/spin_lattice.tex}
-    \textbf{\huge{+}} &
-    \includegraphics[keepaspectratio=true, width=0.2\paperwidth]{images/multi_gpu.png}
-    \textbf{\huge{=}} &
-    \includegraphics[keepaspectratio=true, width=0.2\paperwidth]{images/cheetah.jpg}
-\end{tabular}
+\end{minipage}
+\begin{minipage}{0.1\textwidth}
+\textbf{\huge{+}}
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+\includegraphics[keepaspectratio=true, width=0.2\paperwidth]{images/multi_gpu.png}
+\end{minipage}
+\begin{minipage}{0.1\textwidth}
+\textbf{\huge{=}}
+\end{minipage}
+\begin{minipage}{0.2\textwidth}
+\includegraphics[keepaspectratio=true, width=\textwidth]{images/cheetah.jpg}
+\end{minipage}
 \end{frame}
 
 \setcounter{framenumber}{0}
@@ -68,9 +76,10 @@
     \item A standard model of statistical physics \pause
     \item classical model \pause
     \item Describes magnets:\\
-        \begin{minipage}{0.3\paperwidth}\input{images/spin_lattice.tex}\end{minipage}
-        \begin{minipage}[c]{0.2\paperwidth} $\mathrel{\widehat{=}}$ \end{minipage}
-        \begin{minipage}{0.2\paperwidth}\includegraphics[keepaspectratio=true, width=0.3\paperwidth]{images/magnet.jpg}\end{minipage} \pause
+        \begin{minipage}{0.3\textwidth}\input{images/spin_lattice.tex}\end{minipage}
+        \hspace{1.2cm}
+        \begin{minipage}{0.2\textwidth} \Huge \textbf{$\mathrel{\widehat{=}}$} \end{minipage}
+        \begin{minipage}{0.2\textwidth}\includegraphics[keepaspectratio=true, width=0.3\paperwidth]{images/magnet.jpg}\end{minipage} \pause
     \item System sizes: $100'000 \times 100'000$
 \end{itemize}
 \end{frame}
@@ -129,9 +138,9 @@
         \begin{equation*}
             p_a = e^{-\frac{\Delta E}{k_B T}}
         \end{equation*} \pause
-        \begin{exampleblock}{}
+        \begin{highlightbox}
             Count \#opposed spins!
-        \end{exampleblock}
+        \end{highlightbox}
     \end{minipage}
     %\begin{tikzpicture}
     %    \draw [decorate,decoration={brace,amplitude=10pt},xshift=+4pt,yshift=20pt] (0.5,12.5) -- (0.5,7.0) node [black,midway,xshift=+0.7cm] {\footnotesize $P_1$};
@@ -264,7 +273,7 @@ $\Rightarrow$ 5 reads to flip entire metaspin! %\pause
     \item Not examined big systems (no weak scaling plot) \pause
 \end{itemize}
 \begin{highlightbox}
-    Why this paper?
+    Why this paper?!
 \end{highlightbox}
 \end{frame}
 \end{document}
