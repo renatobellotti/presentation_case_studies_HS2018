@@ -9,6 +9,8 @@
 \usetikzlibrary{decorations.pathreplacing}
 \usepackage{amsmath}
 \usepackage{booktabs}
+\usepackage{wasysym}
+\usepackage{tcolorbox}
 
 \setbeamertemplate{navigation symbols}{}
 
@@ -54,9 +56,9 @@
         Mutliple GPUs\\
         \includegraphics[keepaspectratio=true, height=2cm]{images/multi_gpu.png}
     \end{minipage} \pause
-\begin{exampleblock}{}
+\begin{highlightbox}
     How does it scale? Is it worth the effort?
-\end{exampleblock}
+\end{highlightbox}
 \end{frame}
 
 \begin{frame}{Ising model I}
@@ -150,6 +152,37 @@
         i_1 + i_2 + i_3 + i_4 + 2 \text{exp}_8 + \text{exp}_4 \geq 2
     \end{equation*}
 \end{minipage}
+\end{frame}
+
+\begin{frame}{Single GPU implementation I}
+\begin{itemize}
+    \item Port CPU implementation\\ \pause
+        \textcolor{red}{\frownie{} Bad performance!} \pause
+    \item GPU in a nutshell:\\ \pause
+        \begin{itemize}
+            \item 100s of cores, blocks of 512 \pause
+            \item Memory:\\ \pause
+                \begin{minipage}{0.4\textwidth}
+                    Global memory:\\
+                    \includegraphics[keepaspectratio=true, height=2cm]{images/big_turtle.jpg}
+                    \begin{itemize}
+                        \item \textcolor{green}{big ($\approx$~4~GB)}
+                        \item \textcolor{red}{slow}
+                    \end{itemize}
+                \end{minipage} \pause
+                \begin{minipage}{0.4\textwidth}
+                    Shared memory:\\
+                    \includegraphics[keepaspectratio=true, height=2cm]{images/mouse.jpg}
+                    \begin{itemize}
+                        \item \textcolor{red}{small ($\approx$~16~kB per block)}
+                        \item \textcolor{green}{fast}
+                    \end{itemize}
+                \end{minipage} \pause
+        \end{itemize}
+\end{itemize}
+\begin{highlightbox}
+    Reduce \# accesses to global memory!
+\end{highlightbox}
 \end{frame}
 
 \end{document}
