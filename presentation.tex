@@ -185,4 +185,49 @@
 \end{highlightbox}
 \end{frame}
 
+\begin{frame}{Single GPU implementation II}
+\begin{itemize}
+    \item Metaspins ($4 \times 4$)\\
+        $\rightarrow$ 1 metaspin $\mathrel{\widehat{=}} 2~\text{bytes} = 1~\text{unsigned short int}$\\
+        $\rightarrow$ only 1 read per metaspin \pause
+    \item Read:\\
+        \begin{minipage}{0.1\textwidth}
+            \includegraphics[keepaspectratio, width=\textwidth]{images/metaspin.png}
+        \end{minipage}
+        \begin{minipage}{0.1\textwidth}
+            \Huge\textbf{+}
+        \end{minipage}
+        \begin{minipage}{0.2\textwidth}
+            \large neighbours
+        \end{minipage}
+        \begin{minipage}{0.1\textwidth}
+            \Huge\textbf{=}
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            \includegraphics[keepaspectratio, width=\textwidth]{images/neighbour_metaspins.png}
+        \end{minipage}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Single GPU implementation II}
+\begin{minipage}{0.3\textwidth}
+    Global memory:\\
+    \includegraphics[keepaspectratio=true, height=3cm]{images/neighbour_metaspins_marked.png}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{0.1\textwidth}
+    \huge $\overset{5 \text{reads}}{\longrightarrow}$
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{0.3\textwidth}
+    Shared memory:\\
+    \includegraphics[keepaspectratio=true, height=3cm]{images/neighbour_metaspins_marked_stored.png}
+\end{minipage}\\
+\vspace{1cm}
+$\Rightarrow$ 5 reads to flip entire metaspin! %\pause
+%
+%\vspace{2cm}
+%\textcolor{green}{Efficient calculation of total magnetization}
+\end{frame}
+
 \end{document}
