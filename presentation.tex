@@ -233,4 +233,21 @@ $\Rightarrow$ 5 reads to flip entire metaspin! %\pause
 \begin{frame}{Results: CPU vs. GPU}
 \includegraphics[keepaspectratio=true, width=\textwidth]{images/results1.png}
 \end{frame}
+
+\begin{frame}{Multi-GPU approach}
+\begin{itemize}
+    \item Single GPU:\\
+        \textcolor{green}{fast}\\ \pause
+        \textcolor{red}{system size $\le$ 4~GB ($\mathrel{\widehat{=}} 100'000 \times 100'000$)} \pause
+    \item Idea: Distributed lattice! \pause
+    \item Algorithm:
+        \begin{enumerate}
+            \item \textcolor{orange}{\textbf{Copy neighbour borders to GPU}} \pause
+            \item \textcolor{red}{\textbf{Update own region on GPU}} \pause
+            \item \textcolor{orange}{\textbf{Copy boundary spins to CPU}} \pause
+            \item \textcolor{orange}{\textbf{Exchange boundary spins with other nodes}} \pause
+            \item Repeat or finish
+        \end{enumerate}
+\end{itemize}
+\end{frame}
 \end{document}
